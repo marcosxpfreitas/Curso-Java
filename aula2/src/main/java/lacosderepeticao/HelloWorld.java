@@ -1,4 +1,4 @@
-package aula2;
+package lacosderepeticao;
 
 public class HelloWorld {
 
