@@ -1,0 +1,27 @@
+package com.dextraining.pessoa;
+
+import java.sql.Date;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextraining.banco.PessoaService;
+
+public class PessoaTeste {
+	@Test
+	public void SalvarPessoaTeste(){
+		Date date = new Date();
+		PessoaService pessoaService = new PessoaService();
+		Pessoa pessoa1 = new Pessoa();
+		pessoa1.setNome("Marcos");
+		
+		pessoa1.setDataNasc(date);
+		
+		pessoaService.salvar(pessoa1);
+		Assert.assertNotNull("ID do Itau não pode ser NULL",pessoa1.getId());
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,25 @@
+package com.dextraining.teste;
+
+import org.junit.Test;
+
+/*A palavra test no final do nome da classe, define que essa classe representa 
+um teste.*/
+public class DummyTest {
+	@Test
+	public void testarSoma(){
+		
+	}
+	@Test
+	public void testarSubtracao(){
+		
+	}
+	@Test
+	public void testarMultiplicacao(){
+		
+	}
+	@Test
+	public void testarDivisao(){
+		
+	}
+
+}

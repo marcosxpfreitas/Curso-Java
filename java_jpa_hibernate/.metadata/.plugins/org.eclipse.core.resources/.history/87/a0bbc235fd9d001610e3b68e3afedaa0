@@ -1,0 +1,28 @@
+package com.dextraining.banco;
+
+import javax.persistence.EntityManager;
+
+import com.dextraining.jpa.EntityManagerUtil;
+import com.dextraining.pessoa.Pessoa;
+
+public class PessoaService {
+	public void salvar(Pessoa pessoa){
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		
+		try{
+			em.getTransaction().begin();
+			em.persist(pessoa);
+			em.getTransaction().commit();
+		}
+		finally{
+			em.getTransaction().getRollbackOnly();
+			em.close();
+		}
+		
+	}
+	public Pessoa BuscarPorId(long id){
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		return em.find(Pessoa.class, id );
+		
+	}
+}

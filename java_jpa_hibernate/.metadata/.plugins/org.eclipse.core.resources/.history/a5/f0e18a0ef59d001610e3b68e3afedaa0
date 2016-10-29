@@ -1,0 +1,42 @@
+package com.dextraining.banco;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextraining.jpa.EntityManagerUtil;
+
+public class BancoTeste {
+	
+	@Test
+	public void salvarBancoTeste(){
+		Banco bancoBrasil = new Banco();
+		bancoBrasil.setNome("Brasil");
+		Banco bancoItau = new Banco();
+		bancoItau.setNome("itaú");
+		
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		
+		try{
+			em.getTransaction().begin();
+			//CÓDIGO CONSIDERADO COMO BLOCO
+			em.persist(bancoBrasil);
+			em.persist(bancoItau);
+			em.getTransaction().commit();
+		}catch(Exception e){
+			em.getTransaction().rollback();
+			throw new RuntimeException(e);
+		}
+		finally{
+			em.close();
+			EntityManagerUtil.fechar();
+		}
+		Assert.assertNotNull("ID do Itau não pode ser NULL",bancoItau.getId());
+		Assert.assertNotNull("ID do Itau não pode ser NULL", bancoBrasil.getId());
+		
+	}
+
+}

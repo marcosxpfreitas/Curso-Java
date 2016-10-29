@@ -1,0 +1,41 @@
+package com.dextraining.banco;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class BancoTeste {
+	
+	@Test
+	public void salvarBancoTeste(){
+		Banco bancoBrasil = new Banco();
+		bancoBrasil.setNome("Brasil");
+		Banco bancoItau = new Banco();
+		bancoItau.setNome("itaú");
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CURSO_JPA"); // criar um objeto factory
+		EntityManager em = factory.createEntityManager();
+		
+		try{
+			em.getTransaction().begin();
+			//CÓDIGO CONSIDERADO COMO BLOCO
+			em.persist(bancoBrasil);
+			em.persist(bancoItau);
+			em.getTransaction().commit();
+		}catch(Exception e){
+			em.getTransaction().rollback();
+			throw new RuntimeException(e);
+		}
+		finally{
+			em.close();
+			factory.close();
+		}
+		Assert.assertNotNull(bancoItau.getId());
+		Assert.assertNotNull(bancoBrasil.getId());
+		
+	}
+
+}

@@ -1,0 +1,58 @@
+package com.dextraining.pessoa;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextraining.banco.PessoaService;
+
+public class PessoaTeste {
+	@Test
+	public void SalvarPessoaTeste() throws ParseException{
+		SimpleDateFormat simpleDate =  new SimpleDateFormat("dd-MM-yyyy"); 
+
+		PessoaService pessoaService = new PessoaService();
+		Pessoa pessoa1 = new Pessoa();
+		pessoa1.setNome("Marcos");
+		
+		pessoa1.setDataNasc(simpleDate.parse("24-08-1995"));
+		
+		pessoaService.salvar(pessoa1);
+		Assert.assertNotNull("ID do Itau não pode ser NULL",pessoa1.getId());
+		
+	}	
+	@Test
+	public void BuscarPessoaPorIdTeste() throws ParseException{
+		SimpleDateFormat simpleDate =  new SimpleDateFormat("dd-MM-yyyy"); 
+		
+		PessoaService pessoaService = new PessoaService();
+		Pessoa pessoa1 = new Pessoa();
+		pessoa1.setNome("Jorge");
+		pessoa1.setDataNasc(simpleDate.parse("24-08-1995"));
+		pessoaService.salvar(pessoa1);
+		Pessoa pessoaEncontradaPorId = pessoaService.BuscarPorId(pessoa1.getId());
+		Pessoa pessoaEncontradaPorNome = pessoaService.BucarPorNome(pessoa1.getNome());
+		Pessoa pessoaEncontradaPorData = pessoaService.BucarPorData(pessoa1.getDataNasc());
+		Pessoa pessoa = new Pessoa();
+		System.out.println(pessoa1.getId());
+		
+		
+		
+		
+		Assert.assertNull(pessoa);
+		Assert.assertNotNull(pessoa1);
+		Assert.assertEquals(pessoa1.getId(),pessoaEncontradaPorId.getId());
+		Assert.assertEquals(pessoa1.getNome(),pessoaEncontradaPorNome.getNome());
+		Assert.assertEquals(pessoaEncontradaPorData, pessoa1.getDataNasc());
+		
+		
+		
+	}
+		
+		
+		
+	
+	
+}

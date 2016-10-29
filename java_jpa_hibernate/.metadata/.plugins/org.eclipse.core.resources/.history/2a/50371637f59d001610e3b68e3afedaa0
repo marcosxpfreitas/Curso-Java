@@ -1,0 +1,29 @@
+package com.dextraining.banco;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextraining.jpa.EntityManagerUtil;
+
+public class BancoTeste {
+	
+	@Test
+	public void salvarBancoTeste(){
+		BancoService bancoService = new BancoService();
+		Banco bancoBrasil = new Banco();
+		bancoBrasil.setNome("Brasil");
+		Banco bancoItau = new Banco();
+		bancoItau.setNome("itaú");
+		bancoService.salvar(bancoBrasil);
+		bancoService.salvar(bancoBrasil);
+	
+		Assert.assertNotNull("ID do Itau não pode ser NULL",bancoItau.getId());
+		Assert.assertNotNull("ID do Itau não pode ser NULL", bancoBrasil.getId());
+		
+	}
+
+}

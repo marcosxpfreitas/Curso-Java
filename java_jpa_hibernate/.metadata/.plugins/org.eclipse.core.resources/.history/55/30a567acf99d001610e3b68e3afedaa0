@@ -1,0 +1,9 @@
+package com.dextraining.pessoa;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Pessoa {
+	@Id
+	@GenerateValue(strategy=GenerationType.AUTO);
+}

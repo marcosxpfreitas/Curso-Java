@@ -1,0 +1,5 @@
+package com.dextraining.jpa;
+
+public class EntityManagerUtil {
+
+}

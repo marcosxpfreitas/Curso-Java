@@ -1,0 +1,17 @@
+package com.dextraining.banco;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.Test;
+
+public class BancoTeste {
+	
+	@Test
+	public void salvarBancoTeste(){
+		EntityManagerFactory facotory = Persistence.createEntityManagerFactory("JAVA_JPA"); // criar um objeto factory
+		
+		
+	}
+
+}

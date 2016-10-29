@@ -1,0 +1,28 @@
+package com.dextraining.teste;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+/*A palavra test no final do nome da classe, define que essa classe representa 
+um teste.*/
+public class CalculadoraTeste {
+	@Test
+	public void testarSoma(){
+		int valor = 5+5;
+		Assert.assertEquals(11, valor);
+		
+	}
+	@Test
+	public void testarSubtracao(){
+		
+	}
+	@Test
+	public void testarMultiplicacao(){
+		
+	}
+	@Test
+	public void testarDivisao(){
+		
+	}
+
+}

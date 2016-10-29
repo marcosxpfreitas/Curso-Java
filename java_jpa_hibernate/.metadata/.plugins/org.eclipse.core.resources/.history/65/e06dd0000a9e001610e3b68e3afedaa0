@@ -1,0 +1,15 @@
+package com.dextraining.banco;
+
+import java.util.Date;
+
+import javax.persistence.EntityManager;
+
+import com.dextraining.jpa.EntityManagerUtil;
+import com.dextraining.pessoa.Pessoa;
+
+public class PessoaService extends GenericService {
+	public PessoaService(){
+		super(Pessoa.class);
+	
+	
+}
