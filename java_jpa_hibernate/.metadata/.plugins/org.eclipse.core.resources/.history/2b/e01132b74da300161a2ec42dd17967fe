@@ -1,0 +1,23 @@
+package com.dextraining.investimento;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Investimento {
+
+	@Id
+	private char id;
+	@Column 
+	private String descricao;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

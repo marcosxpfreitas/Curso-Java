@@ -1,0 +1,26 @@
+package com.dextraining.service;
+
+import org.junit.After;
+import org.junit.Test;
+
+import com.dextraining.investimento.Investimento;
+import com.dextraining.jpa.EntityManagerUtil;
+
+public class InvestimentoService extends GenericService<Investimento> {
+	public InvestimentoService(){
+		super(Investimento.class);
+	}
+	
+	@After
+	public void close(){
+		EntityManagerUtil.fechar();
+	}
+	@Test
+	public void SalvarInvestimentoTest(){
+		Investimento investimento = new Investimento();
+		
+		
+	}
+	
+
+}

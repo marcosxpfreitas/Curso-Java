@@ -1,0 +1,27 @@
+package com.dextraining.jpa;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class EntityManagerUtil {
+	//Criando um atributo Entity Manager Factory static, para existir enquanto o programa estiver em Runtime.
+	private static EntityManagerFactory factory;
+	public static EntityManager criarEntityManager(){
+		//Senão existe factory ainda, ele cria.
+		if(factory==null){
+			factory = Persistence.createEntityManagerFactory("CURSO_JPA"); // criar um objeto factory
+		}
+												
+			return factory.createEntityManager();//Se já existe, ele retorna o existente.
+		
+	}
+	public static void fechar(){
+		//Só fecha se o factory existir. 
+		if(factory==null){
+			factory.close();
+			factory=null;
+		}
+	}
+
+}

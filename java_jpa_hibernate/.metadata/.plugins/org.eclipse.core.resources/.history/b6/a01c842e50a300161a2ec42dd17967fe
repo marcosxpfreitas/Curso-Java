@@ -1,0 +1,25 @@
+package com.dextraining.investimento;
+
+import org.junit.After;
+import org.junit.Test;
+
+import com.dextraining.jpa.EntityManagerUtil;
+import com.dextraining.service.InvestimentoService;
+
+public class InvestimentoTeste {
+	
+	@After
+	public void close(){
+		EntityManagerUtil.fechar();
+	}
+	@Test
+	public void SalvarInvestimentoTest(){
+		Investimento investimento = new Investimento("Poupança",40000.00,450.00);
+		InvestimentoService investimentoSerive = new InvestimentoService();
+		
+		
+		
+		
+	}
+	
+}

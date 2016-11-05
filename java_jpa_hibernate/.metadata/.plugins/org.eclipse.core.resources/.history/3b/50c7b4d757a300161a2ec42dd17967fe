@@ -1,0 +1,28 @@
+package com.dextraining.service;
+
+
+
+import com.dextraining.investimento.Investimento;
+
+
+public class InvestimentoService extends GenericService<Investimento> {
+	public InvestimentoService(){
+		super(Investimento.class);
+	}
+	
+	@Override
+	public void salvar(Investimento investimento){
+		if(investimento.getDescricao()==null){
+			
+		}
+		if(investimento.getRendimentoMensal()==null){
+			
+		}
+		if(investimento.getValor()==null){
+			
+		}
+		super.salvar(investimento);
+	}
+
+
+}

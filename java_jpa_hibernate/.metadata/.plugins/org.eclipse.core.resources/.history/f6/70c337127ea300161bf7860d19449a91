@@ -1,0 +1,91 @@
+package com.dextraining.garagem.dominio;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+
+import com.dexraining.garagem.jpa.EntityManagerUtil;
+import com.dextraining.garagem.dominio.veiculo.Veiculo;
+import com.dextraining.garagem.exception.VeiculoDuplicadoException;
+
+public class GaragemJPA implements Garagem {
+
+	@Override
+	public void adicionar(Veiculo veiculo) {
+		// TODO Salvar novo veiculo no banco de dados
+		// TODO IMPORTANTE: Validar duplicidade da placa do veiculo
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		Veiculo veiculoEncontrado = this.buscar(veiculo.getPlaca());
+		if(veiculoEncontrado==null){
+			try {
+				em.getTransaction().begin();
+				em.persist(veiculo);
+				em.getTransaction().commit();
+			} catch (Exception e) {
+				em.getTransaction().rollback();
+				throw e;
+			} finally {
+				em.close();
+			}
+		}else{
+			throw new VeiculoDuplicadoException();
+		}
+
+		
+	}
+
+	@Override
+	public void vender(String placa) {
+		// TODO Implementar venda de veiculo por placa
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		Veiculo veiculo = this.buscar(placa);
+		if(veiculo!=null){
+			try {
+				em.getTransaction().begin();
+				em.remove(veiculo);
+				em.getTransaction().commit();
+			} catch (Exception e) {
+				em.getTransaction().rollback();
+				throw e;
+			} finally {
+				em.close();
+			}
+		}else{
+			throw new VeiculoDuplicadoException();
+		}
+	}
+
+	@Override
+	public Veiculo buscar(String placa) {
+		String jpql ="";
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		try{
+			jpql+= "SELECT v FROM Veiculo v ";
+			jpql+= "WHERE i.placa = :placa";
+			
+			Query query = em.createQuery(jpql);
+			query.setParameter("placa", placa);
+			return (Veiculo) query.getSingleResult();
+		}catch(NoResultException e){
+			return null;
+		}
+		finally{
+			em.close();
+		}
+		
+	
+	}
+
+	@Override
+	public List<Veiculo> listar() {
+		// TODO: Implementar consulta que lista todos os veiculos ordenados por:
+		// marca;
+		// modelo;
+		// ano;
+		// preco;
+
+		return null;
+	}
+}

@@ -1,0 +1,52 @@
+package com.dextraining.service;
+
+
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+import com.dextraining.exception.ValidacaoException;
+import com.dextraining.investimento.Investimento;
+import com.dextraining.jpa.EntityManagerUtil;
+
+
+public class InvestimentoService extends GenericService<Investimento> {
+	public InvestimentoService(){
+		super(Investimento.class);
+	}
+	
+	@Override
+	public void salvar(Investimento investimento){
+		if(investimento.getDescricao()==null || investimento.getDescricao().isEmpty()){
+			throw new ValidacaoException("Descrição não pode estar vazia.");
+		}
+		if(investimento.getRendimentoMensal()==null){
+			throw new ValidacaoException("Rendimento mensal não pode estar vazio");
+		}
+		if(investimento.getValor()==null){
+			throw new ValidacaoException("Valor não pode estar vazio");
+		}
+		super.salvar(investimento);
+	}
+	
+	public List<Investimento> consultar(String descricao){
+		String jsql="";
+		jsql += "SELECT i From Investimento i";
+		jsql += "ORDER BY i.valor";
+		
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		
+		Query query = em.createQuery(jsql);
+		
+		query.setParameter("descricao", descricao);
+		
+		return query.getResultList();
+		
+		
+		
+	}
+
+
+}

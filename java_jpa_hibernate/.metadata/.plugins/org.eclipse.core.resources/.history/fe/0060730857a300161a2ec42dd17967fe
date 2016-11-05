@@ -1,0 +1,14 @@
+package com.dextraining.service;
+
+
+
+import com.dextraining.investimento.Investimento;
+
+
+public class InvestimentoService extends GenericService<Investimento> {
+	public InvestimentoService(){
+		super(Investimento.class);
+	}
+
+
+}

@@ -1,0 +1,54 @@
+package com.dextraining.investimento;
+
+import java.math.BigDecimal;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextraining.exception.ValidacaoException;
+import com.dextraining.jpa.EntityManagerUtil;
+import com.dextraining.service.InvestimentoService;
+
+
+public class InvestimentoTeste {
+	
+	@After
+	public void close(){
+		EntityManagerUtil.fechar();
+	}
+	@Test
+	public void SalvarInvestimentoTest(){
+		Investimento investimento = new Investimento("Poupança",BigDecimal.valueOf(40000.00),BigDecimal.valueOf(450.00));
+		InvestimentoService investimentoService = new InvestimentoService();
+		investimentoService.salvar(investimento);
+		investimentoService.buscarPorId(investimento.getId());
+		Assert.assertNotNull(investimento.getRendimentoMensal());
+		
+	}
+	
+	
+	@Test(expected = ValidacaoException.class)
+	public void SalvarSemCampoObrigatorio(){
+		
+		Investimento investimento1 = new Investimento();
+		InvestimentoService investimentoService = new InvestimentoService();
+		investimento1.setValor(BigDecimal.valueOf(450.00));
+		investimento1.setDescricao("POKER");
+		investimentoService.salvar(investimento1);
+		Assert.assertNull(investimento1.getId());
+
+	}
+	
+	
+	@Test
+	public void ConsultasTest(){
+		Investimento investimento1 = new Investimento("BOLSA DE VALORES",BigDecimal.valueOf(40000.00),BigDecimal.valueOf(5));
+		InvestimentoService investimentoService = new InvestimentoService();
+		investimentoService.consultarInvestimentoeRendimento();
+		investimentoService.cosultarTodos();
+		investimentoService.consultarPorValor("pok");
+	}
+	
+	
+}

@@ -1,0 +1,46 @@
+package com.dextraining.investimento;
+
+import java.math.BigDecimal;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dextraining.jpa.EntityManagerUtil;
+import com.dextraining.service.InvestimentoService;
+
+
+public class InvestimentoTeste {
+	
+	@After
+	public void close(){
+		EntityManagerUtil.fechar();
+	}
+	@Test
+	public void SalvarInvestimentoTest(){
+		Investimento investimento = new Investimento("Poupança",BigDecimal.valueOf(40000.00),BigDecimal.valueOf(450.00));
+		Investimento investimento1 = new Investimento();
+		InvestimentoService investimentoService = new InvestimentoService();
+		investimento1.setValor(BigDecimal.valueOf(450.00));
+		investimento1.setDescricao("POKER");
+		
+		investimentoService.salvar(investimento);
+		investimentoService.salvar(investimento1);
+		
+		investimentoService.buscarPorId(investimento.getId());
+		
+		Assert.assertNotNull(investimento.getId());
+		Assert.assertNull(investimento1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+}

@@ -1,0 +1,29 @@
+package com.dextraining.service;
+
+
+
+import com.dextraining.exception.ValidacaoException;
+import com.dextraining.investimento.Investimento;
+
+
+public class InvestimentoService extends GenericService<Investimento> {
+	public InvestimentoService(){
+		super(Investimento.class);
+	}
+	
+	@Override
+	public void salvar(Investimento investimento){
+		if(investimento.getDescricao()==null || investimento.getDescricao().isEmpty()){
+			throw new ValidacaoException("Descrição não pode estar vazia.");
+		}
+		if(investimento.getRendimentoMensal()==null){
+			throw new ValidacaoException("Rendimento mensal não pode estar vazio");
+		}
+		if(investimento.getValor()==null){
+			throw new ValidacaoException("Valor não pode estar vazio");
+		}
+		super.salvar(investimento);
+	}
+
+
+}

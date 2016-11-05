@@ -18,7 +18,7 @@ public class EntityManagerUtil {
 	}
 	public static void fechar(){
 		//Só fecha se o factory existir. 
-		if(factory==null){
+		if(factory!=null){
 			factory.close();
 			factory=null;
 		}

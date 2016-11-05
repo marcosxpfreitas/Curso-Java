@@ -1,0 +1,54 @@
+package com.dextraining.investimento;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Investimento {
+
+	@Id
+	private char id;
+	@Column(nullable = true) 
+	private String descricao;
+	@Column(nullable = true) 
+	private double valor;
+	@Column(nullable = true) 
+	private double rendimentoMensal;
+	
+	public char getId() {
+		return id;
+	}
+	public void setId(char id) {
+		this.id = id;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public double getValor() {
+		return valor;
+	}
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+	public double getRendimentoMensal() {
+		return rendimentoMensal;
+	}
+	public void setRendimentoMensal(double rendimentoMensal) {
+		this.rendimentoMensal = rendimentoMensal;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
