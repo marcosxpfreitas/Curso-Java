@@ -1,0 +1,19 @@
+package com.dextraining.filme.dominio.jpa;
+
+import javax.persistence.EntityManager;
+
+import com.dexraining.garagem.jpa.EntityManagerUtil;
+import com.dextraining.filme.dominio.filmes.Ator;
+
+public class CategoriaService {
+	EntityManager em = EntityManagerUtil.criarEntityManager();
+	public void adicionar(Ator ator){
+		try{
+			em.getTransaction().begin();
+			em.persist(ator);
+			em.getTransaction().commit();
+		}finally{
+			em.close();
+		}
+	}
+}

@@ -1,0 +1,5 @@
+package com.dextraining.filme.dominio.jpa;
+
+public class FilmeJPA {
+
+}

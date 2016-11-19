@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;src.main.java.com.dextrainning.jpa&apos; to &apos;dextra.exerciciojpa/src/main/java&apos;&#x0A;- Original project: &apos;curso-jpa&apos;&#x0A;- Destination element: &apos;dextra.exerciciojpa/src/main/java&apos;&#x0A;- Original element: &apos;curso-jpa/src.main.java.com.dextrainning.jpa&apos;" description="Copy package" destination="=dextra.exerciciojpa/src\/main\/java" element1="/&lt;src.main.java.com.dextrainning.jpa" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1479576393857" version="1.0"/>
+</session>

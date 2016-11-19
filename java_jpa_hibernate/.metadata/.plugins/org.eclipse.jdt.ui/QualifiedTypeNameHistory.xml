@@ -4,10 +4,8 @@
 <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
 <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
-<fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="com.dextraining.pessoa.Pessoa"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.persistence.TemporalType"/>
 <fullyQualifiedTypeName name="com.dextraining.service.GenericService"/>
 <fullyQualifiedTypeName name="java.lang.annotation.Target"/>
@@ -20,9 +18,7 @@
 <fullyQualifiedTypeName name="javax.management.Query"/>
 <fullyQualifiedTypeName name="java.math.BigDecimal"/>
 <fullyQualifiedTypeName name="antlr.collections.List"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
-<fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
 <fullyQualifiedTypeName name="javax.persistence.Query"/>
@@ -31,4 +27,13 @@
 <fullyQualifiedTypeName name="com.dextraining.garagem.exception.VeiculoNaoEncontradoException"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
 <fullyQualifiedTypeName name="com.dexraining.garagem.jpa.EntityManagerUtil"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.dextraining.filme.dominio.filmes.Ator"/>
+<fullyQualifiedTypeName name="com.dextraining.filme.dominio.filmes.Filme"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.dextraining.filme.dominio.jpa.AtorService"/>
+<fullyQualifiedTypeName name="com.dextraining.filme.dominio.jpa.DiretorService"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
 </qualifiedTypeNameHistroy>

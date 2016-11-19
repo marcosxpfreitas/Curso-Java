@@ -1,0 +1,77 @@
+package com.dextraining.filme.dominio;
+
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.dexraining.garagem.jpa.EntityManagerUtil;
+import com.dextraining.filme.dominio.filmes.Ator;
+import com.dextraining.filme.dominio.filmes.Categoria;
+import com.dextraining.filme.dominio.filmes.Diretor;
+import com.dextraining.filme.dominio.filmes.Filme;
+import com.dextraining.filme.dominio.jpa.AtorService;
+import com.dextraining.filme.dominio.jpa.CategoriaService;
+import com.dextraining.filme.dominio.jpa.DiretorService;
+import com.dextraining.filme.dominio.jpa.FilmeJPA;
+
+public class FilmeJPATest {
+
+	
+
+	@After
+	public void after() {
+		EntityManagerUtil.fechar();
+	}
+	@Test
+	public void adicionar(){
+		
+		
+		//Iniciando a Categoria
+		Categoria categoria = new Categoria();
+		categoria.setNome("categoria1");
+		List<Categoria> CategoriaList = new ArrayList();
+		CategoriaList.add(categoria);
+		
+		
+		//Iniciando o Ator
+		Ator ator = new Ator();
+		ator.setNome("Marcos Xavier");
+		List<Ator> atorList = new ArrayList();
+		atorList.add(ator);
+		
+		//Iniciando o Diretor
+		Diretor diretor = new Diretor();
+		diretor.setNome("Marcos Xavier");
+		
+		
+		//Iniciando o filme
+		Filme filme = new Filme();
+		filme.setNome("O grito");
+		try {
+			filme.setDataLancamento(simpleDate.parse("24/08/1995"));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		filme.setCategorias(CategoriaList);
+		filme.setAtor(atorList);
+		filme.setDiretor(diretor);
+		
+		CategoriaService categoriaService = new CategoriaService();
+		categoriaService.adicionar(categoria);
+		AtorService atorService = new AtorService();
+		atorService.adicionar(ator);
+		DiretorService diretorService = new DiretorService();
+		diretorService.adicionar(diretor);
+		FilmeJPA filmejpa = new FilmeJPA();
+		filmejpa.adicionar(filme);
+		
+		
+		
+	}
+	
+}

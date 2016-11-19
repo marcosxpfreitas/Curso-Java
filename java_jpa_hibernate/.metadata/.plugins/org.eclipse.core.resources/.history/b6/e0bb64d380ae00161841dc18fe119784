@@ -1,0 +1,15 @@
+package com.dextraining.java.dominio.filmes;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Ator {
+	@Id
+	private long id;
+	@Column
+	String nome;
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.dextraining.java.dominio.filmes;
+
+public class Categoria {
+
+}

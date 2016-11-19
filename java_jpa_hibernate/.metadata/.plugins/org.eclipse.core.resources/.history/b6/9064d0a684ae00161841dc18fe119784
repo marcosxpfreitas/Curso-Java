@@ -1,0 +1,73 @@
+package com.dextraining.java.dominio.filmes;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Filme {
+	@Id
+	private long id;
+	@Column
+	private Date dataLancamento;
+	@Column
+	private String nome;
+	@Column
+	@ManyToOne
+	private Diretor diretor;
+	@Column
+	@ManyToMany
+	private List <Categoria> categorias;
+	@Column
+	@OneToMany
+	private List <Ator> Ator;
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+	public Date getDataLancamento() {
+		return dataLancamento;
+	}
+	public void setDataLancamento(Date dataLancamento) {
+		this.dataLancamento = dataLancamento;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public List<Ator> getAtor() {
+		return Ator;
+	}
+	public void setAtor(List<Ator> ator) {
+		Ator = ator;
+	}
+	public Diretor getDiretor() {
+		return diretor;
+	}
+	public void setDiretor(Diretor diretor) {
+		this.diretor = diretor;
+	}
+	
+	
+	
+	
+	
+	
+}

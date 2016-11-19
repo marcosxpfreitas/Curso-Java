@@ -1,0 +1,19 @@
+package com.dextraining.filme.dominio.jpa;
+
+import javax.persistence.EntityManager;
+
+import com.dexraining.garagem.jpa.EntityManagerUtil;
+import com.dextraining.filme.dominio.filmes.Categoria;
+
+public class DiretorService {
+	EntityManager em = EntityManagerUtil.criarEntityManager();
+	public void adicionar(Diretor diretor){
+		try{
+			em.getTransaction().begin();
+			em.persist(diretor);
+			em.getTransaction().commit();
+		}finally{
+			em.close();
+		}
+	}
+}
