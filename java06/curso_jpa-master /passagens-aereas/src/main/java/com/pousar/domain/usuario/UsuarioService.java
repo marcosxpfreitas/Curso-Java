@@ -1,0 +1,100 @@
+package com.pousar.domain.usuario;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
+
+import com.pousar.app.util.Strings;
+import com.pousar.domain.ValidacaoException;
+import com.pousar.jpa.BaseService;
+import com.pousar.jpa.EntityManagerUtil;
+
+public class UsuarioService extends BaseService<Usuario> {
+
+	public UsuarioService() {
+		super(Usuario.class);
+	}
+
+	@Override
+	public Usuario salvar(Usuario entidade) {
+
+		if (Strings.isEmpty(entidade.getNome())) {
+			throw new ValidacaoException("Nome é obrigatório");
+		}
+		if (Strings.isEmpty(entidade.getSenha())) {
+			throw new ValidacaoException("Senha é obrigatório");
+		}
+		if (Strings.isEmpty(entidade.getEmail())) {
+			throw new ValidacaoException("Senha é obrigatório");
+		}
+
+		Usuario usuarioEncontrado = this.buscarPorEmail(entidade.getEmail());
+		if (usuarioEncontrado != null) {
+			if (!usuarioEncontrado.getId().equals(entidade.getId())) {
+				throw new ValidacaoException("Email já está cadastrado.");
+			}
+		}
+		return super.salvar(entidade);
+
+	}
+
+	public Usuario buscarParaLogin(String email, String senha) {
+		// TODO: implementar login buscando dados no banco de dados
+		try {
+			String jpql = "";
+			jpql += "SELECT u FROM Usuario u ";
+			jpql += "WHERE u.email =:email and u.senha =:senha";
+
+			EntityManager em = EntityManagerUtil.criarEntityManager();
+
+			Query query = em.createQuery(jpql);
+			query.setParameter("email", email);
+			query.setParameter("senha", senha);
+
+			return (Usuario) query.getSingleResult();
+
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+
+	public Usuario buscarPorEmail(String email) {
+		try {
+			String jpql = "";
+			jpql += "SELECT u FROM Usuario u ";
+			jpql += "WHERE u.email =:email";
+
+			EntityManager em = EntityManagerUtil.criarEntityManager();
+
+			Query query = em.createQuery(jpql);
+			query.setParameter("email", email);
+			return (Usuario) query.getSingleResult();
+
+		} catch (NoResultException e) {
+			return null;
+		}
+	}
+
+	public List<Usuario> buscarPor(String email, String nome) {
+		String jpql = "SELECT u FROM Usuario u WHERE 1=1 ";
+
+		if (Strings.isNotEmpty(nome)) {
+			jpql += " AND UPPER(u.nome) LIKE UPPER(:nome) ";
+		}
+		if (Strings.isNotEmpty(email)) {
+			jpql += " AND UPPER(u.email) LIKE UPPER(:email) ";
+		}
+		EntityManager em = EntityManagerUtil.criarEntityManager();
+		Query query = em.createQuery(jpql);
+		if(Strings.isNotEmpty(nome)){
+			query.setParameter("nome", "%" + nome + "%");
+		}
+		if(Strings.isNotEmpty(email)){
+			query.setParameter("email", "%" + email + "%");
+		}	
+		return query.getResultList();
+
+	}
+}

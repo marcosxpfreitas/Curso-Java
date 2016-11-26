@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;passagens-aereas&apos;" deleteContents="false" description="Delete resource &apos;passagens-aereas&apos;" element1="/passagens-aereas" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1480176507878"/>&#x0A;<refactoring comment="Delete resource &apos;jpa-blank-project&apos;" deleteContents="false" description="Delete resource &apos;jpa-blank-project&apos;" element1="/jpa-blank-project" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1480176533126"/>
+</session>

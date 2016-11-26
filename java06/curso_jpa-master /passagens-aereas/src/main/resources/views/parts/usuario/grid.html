@@ -1,0 +1,29 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nome</th>
+			<th>Email</th>
+			<th></th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		{{~it.usuarios :usuario:index}}
+			<tr>
+				<th scope="row">{{=usuario.id}}</th>
+				<td>{{=usuario.nome}}</td>
+				<td>{{=usuario.email}}</td>
+				<td class="action-column">
+					<button id="btnEditar" class="btn btn-info" type="button" onclick="app.usuarios.editar({{=usuario.id}})">
+						<i class="fa fa-pencil-square-o"></i>
+					</button>
+					
+					<button id="btnRemove" class="btn btn-danger" type="button" onclick="app.usuarios.remover({{=usuario.id}})">
+						<i class="fa fa-times"></i>
+					</button>
+				</td>
+			</tr>
+		{{~}}
+	</tbody>
+</table>

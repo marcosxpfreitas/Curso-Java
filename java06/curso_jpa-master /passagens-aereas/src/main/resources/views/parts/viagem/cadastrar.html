@@ -1,0 +1,72 @@
+<div class="viagem row">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<h1 class="text-center">Cadastro de viagem</h1>
+		</div>
+	
+		<form class="center">
+			{{? it.viagem.id }}
+			 	<input id="id" name="id" type="hidden" value="{{=it.viagem.id}}">
+			{{?}}
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<div class="form-group">
+						<i class="fa fa-chevron-circle-right form-control-icon"></i>
+					 	<input name="ida[origem]" type="text" class="form-control" placeholder="* Origem" value="{{=it.viagem.ida.origem}}">
+				 	</div>
+				 	<div class="form-group">
+				 		<i class="fa fa-chevron-circle-left form-control-icon"></i>
+					 	<input name="ida[destino]" type="text" class="form-control" placeholder="* Destino" value="{{=it.viagem.ida.destino}}">
+				 	</div>
+	 			 	<div class="form-group">
+						<i class="fa fa-envelope-o form-control-icon"></i>
+						<i class="fa fa-money form-control-icon"></i>
+					 	<input name="preco" type="number" class="form-control" placeholder="* Preco" value="{{=it.viagem.preco}}">
+				 	</div>
+				</div>
+			</div>
+						
+			<div class="row">
+				<div class="col-sm-12 col-md-6 col-lg-6">
+					<div class="card">
+						<h3 class="card-header">Ida</h3>
+						<div class="card-block">
+							<div class="form-group">
+								<i class="fa fa-calendar form-control-icon"></i>
+							 	<input name="ida[dataHoraSaida]" type="text" class="form-control datetime" placeholder="* Data/hora saida" value="{{=it.viagem.ida.dataHoraSaida}}">
+						 	</div>
+						 	
+						 	<div class="form-group">
+								<i class="fa fa-calendar form-control-icon"></i>
+							 	<input name="ida[dataHoraChegada]" type="text" class="form-control datetime" placeholder="* Data/hora chegada" value="{{=it.viagem.ida.dataHoraChegada}}">
+						 	</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-6">
+					<div class="card">
+						<h3 class="card-header">Volta</h3>
+						<div class="card-block">
+							<div class="form-group">
+								<i class="fa fa-calendar form-control-icon"></i>
+							 	<input name="volta[dataHoraSaida]" type="text" class="form-control datetime" placeholder="* Data/hora saida" value="{{=it.viagem.volta.dataHoraSaida}}">
+						 	</div>
+						 	
+						 	<div class="form-group">
+						 		<i class="fa fa-calendar form-control-icon"></i>
+							 	<input name="volta[dataHoraChegada]" type="text" class="form-control datetime" placeholder="* Data/hora chegada" value="{{=it.viagem.volta.dataHoraChegada}}">
+						 	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	 		<div class="form-group row">
+	 			<div class="col-sm-12 col-md-12 col-lg-12">
+	 				<button onclick="app.viagem.salvar()" type="button" class="btn btn-outline-primary col-sm-12 col-md-12 col-lg-12">
+	 					<i class="fa fa-sign-in"></i> Salvar
+ 					</button>
+ 				</div>
+		    </div>
+		</form>
+	</div>
+</div>

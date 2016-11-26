@@ -1,0 +1,30 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Origem</th>
+			<th>Destino</th>
+			<th>Ida</th>
+			<th>Volta</th>
+			<th>Preco</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		{{~it.viagens :viagem:index}}
+			<tr>
+				<th scope="row">{{=viagem.id}}</th>
+				<td>{{=viagem.ida.origem}}</td>
+				<td>{{=viagem.ida.destino}}</td>
+				<td>
+					Saida em {{=it.dateFormatter(viagem.ida.dataHoraSaida)}} as  {{=it.timeFormatter(viagem.ida.dataHoraSaida)}} / 
+					Chegada em {{=it.dateFormatter(viagem.ida.dataHoraChegada)}} as  {{=it.timeFormatter(viagem.ida.dataHoraChegada)}} 
+				</td>
+				<td>
+					Saida em {{=it.dateFormatter(viagem.volta.dataHoraSaida)}} as  {{=it.timeFormatter(viagem.volta.dataHoraSaida)}} / 
+					Chegada em {{=it.dateFormatter(viagem.volta.dataHoraChegada)}} as  {{=it.timeFormatter(viagem.volta.dataHoraChegada)}} </td>
+				<td>{{=viagem.preco}}</td>
+			</tr>
+		{{~}}
+	</tbody>
+</table>

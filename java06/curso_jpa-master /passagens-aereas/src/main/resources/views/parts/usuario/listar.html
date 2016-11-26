@@ -1,0 +1,28 @@
+
+<div class="usuario">
+
+	<div class="row">
+		<div class="col-sm-12 col-md-12 col-lg-12">
+			<h1>Usuarios</h1>
+		</div>
+	</div>
+
+	<form>
+		<div class="row">
+			<div class="col-sm-10 col-md-4 col-lg-2">
+				  <label for="exampleInputPassword1">Nome</label>
+				  <input type="text" name="nome" class="form-control" placeholder="Informe o nome">
+			</div>
+			<div class="col-sm-10 col-md-4 col-lg-2">
+				  <label for="exampleInputEmail1">Email</label>
+				  <input type="email" name="email" class="form-control" placeholder="Informe o email">
+			</div>
+			<div class="col-sm-10 col-md-4 col-lg-2 row-action">
+				<button onclick="app.usuarios.buscar()"    type="button" class="btn btn-primary">Buscar</button>
+				<button onclick="app.usuarios.cadastrar()" type="button" class="btn btn-secondary" >Adicionar</button>
+			</div>
+		</div>
+		
+		<div id="grid-container" class="row"></div>
+	</form>	
+</div>

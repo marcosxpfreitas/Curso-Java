@@ -1,0 +1,51 @@
+.menu {
+	margin-top: 1em;
+}
+.content {
+	padding: 1em;
+}
+i.form-control-icon {
+	position: absolute;
+	margin-top: 0.6em;
+	margin-left: 0.6em;
+	color: gray;
+}
+i.form-control-icon + input {
+	padding-left: 2em;
+}
+.row-action {
+	line-height: 6em;
+	vertical-align: middle;
+	position: relative;
+	border: none;
+}
+.center {
+	margin: 0 auto;
+}
+.error {
+	opacity:0;
+	transition: all 1s;
+}
+.error.open {
+	opacity:1;
+}
+.content > div {
+	padding-left: 1em;
+}
+
+.row-action button, .action-column button {
+	margin-right: 1em;
+}
+.messages {
+	margin-top: 1em;
+}
+.text-center {
+	text-align: center
+}
+.login, .login form.login-form {
+	margin-top: 2em;
+}
+h1 {
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+}

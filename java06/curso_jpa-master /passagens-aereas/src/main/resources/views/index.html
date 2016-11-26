@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html>
+	<head>
+		<!-- third party css -->
+		<link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/lib/bootstrap-flex.min.css">
+		<link rel="stylesheet" type="text/css" href="css/lib/bootstrap-grid.min.css">
+		<link rel="stylesheet" type="text/css" href="css/lib/font-awesome/css/font-awesome.min.css">
+		
+		<!-- app css -->
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+	</head>
+
+	<body>
+		<!-- menu container -->
+		<div id="menu" class="menu container-fluid"></div>
+		
+		<!-- messages -->
+		<div>
+			<div class="messages container-fluid"></div>
+		</div>
+		
+		<!-- content container -->
+		<div id="content" class="content container-fluid"></div>
+		
+		<!-- modal content -->
+		<div class="modal fade">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+					
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						
+						<h4 class="modal-title"></h4>
+					</div>
+					
+					<div class="modal-body">
+						<p></p>
+					</div>
+					
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Nao</button>
+						<button onclick="app.usuarios.confirmarRemocao()" type="button" class="btn btn-primary" data-dismiss="modal">Sim</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<!-- third party javascript -->
+<!-- 	<script type='text/javascript' src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script> -->
+	<script type='text/javascript' src="js/lib/jquery-3.1.1.min.js"></script>
+	<script type='text/javascript' src="js/lib/jquery.serializejson.min.js"></script>
+	<script type='text/javascript' src="js/lib/tether.min.js"></script>
+	<script type='text/javascript' src="js/lib/bootstrap.min.js"></script>
+	<script type='text/javascript' src="js/lib/doT.min.js"></script>
+	<script type='text/javascript' src="js/lib/jquery.mask.min.js"></script>
+	<script type='text/javascript' src="js/lib/moment.js"></script>
+	
+	<!-- app javascripts -->
+	<script type='text/javascript' src="js/app.js"></script>
+	<script type='text/javascript' src="js/home.js"></script>
+	<script type='text/javascript' src="js/login.js"></script>
+	<script type='text/javascript' src="js/usuario.js"></script>
+	<script type='text/javascript' src="js/viagem.js"></script>
+	
+	<!-- inicia na tela de login -->
+	<script>
+		$(document).ready(function() {
+			app.login.open();
+		})
+	</script>
+</html>

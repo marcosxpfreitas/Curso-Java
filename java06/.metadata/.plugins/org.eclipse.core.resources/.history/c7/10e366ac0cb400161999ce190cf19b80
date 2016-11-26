@@ -1,0 +1,39 @@
+package com.pousar.domain.viagem;
+
+import javax.persistence.Column;
+
+import com.pousar.jpa.Entidade;
+
+@Entity
+public class Viagem extends Entidade {
+	@Column(nullable=false, length=40)
+	private Voo ida;
+	@Column(nullable=false, length=40)
+	private Voo volta;
+	@Column(nullable=false, length=5)
+	private double preco;
+
+	public Voo getIda() {
+		return ida;
+	}
+
+	public void setIda(Voo ida) {
+		this.ida = ida;
+	}
+
+	public Voo getVolta() {
+		return volta;
+	}
+
+	public void setVolta(Voo volta) {
+		this.volta = volta;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+}

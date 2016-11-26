@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.pousar.jpa.EntityManagerUtil"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManager"/>
+<fullyQualifiedTypeName name="javax.management.Query"/>
+<fullyQualifiedTypeName name="javax.persistence.Query"/>
+<fullyQualifiedTypeName name="javax.persistence.NoResultException"/>
+<fullyQualifiedTypeName name="com.pousar.app.util.Strings"/>
+<fullyQualifiedTypeName name="javax.persistence.MappedSuperclass"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="com.pousar.domain.ValidacaoException"/>
+</qualifiedTypeNameHistroy>
