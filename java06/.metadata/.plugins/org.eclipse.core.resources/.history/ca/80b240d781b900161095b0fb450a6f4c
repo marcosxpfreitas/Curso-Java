@@ -1,0 +1,16 @@
+<html>
+<body>
+	<h3>Bem vindo ao nosso gerenciador de Empresas!<br/></h3>
+	<hr>
+	<div id="frmAdicionaUsuario">
+		<h3>Cadastrar um novo usuário:</h3>
+		
+		<form id="novoUsuario" action="adicionausuario" 
+		method="post">
+			Email: <input type="text" name="email" /><br/>
+			Senha: <input type="password" name="senha" /><br/>
+			<input type="submit" value="Enviar" />
+		</form>
+	</div>
+</body>
+</html>

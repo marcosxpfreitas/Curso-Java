@@ -1,0 +1,73 @@
+package br.com.javaweb.gerenciador.web;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.javaweb.gerenciador.Usuario;
+import br.com.javaweb.gerenciador.dao.UsuarioDAO;
+
+/**
+ * Servlet implementation class AdicionaUsuario
+ */
+@WebServlet("/adicionausuario")
+public class AdicionaUsuario extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AdicionaUsuario() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		String email = request.getParameter("email");
+		String senha = request.getParameter("senha");
+		
+		
+		Usuario usuario = new UsuarioDAO().buscaPorEmailESenha(email, senha);
+		
+		if(usuario!=null){
+			StringBuffer html = new StringBuffer();
+			html.append("<html>\n");
+			html.append("<body>");
+			html.append("Usuario encontrado <br/>");
+			html.append("email:"+usuario.getEmail()+"\n");
+			html.append("senha:"+usuario.getSenha()+"\n");
+			html.append("</body>");
+			html.append("</html>\n");
+			Cookie cookie = new Cookie("usuario logado",email);
+			response.addCookie(cookie);
+			response.sendRedirect("/ExemploServlets/index.html");
+		}else{
+			StringBuffer html = new StringBuffer();
+			html.append("<html>\n");
+			html.append("<body>");
+			html.append("Usuario não encontrado <br/>");
+			html.append("</body>");
+			html.append("</html>\n");
+			response.sendRedirect("/ExemploServletCookies/erro.html");
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		
+	}
+
+}

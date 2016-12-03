@@ -1,0 +1,11 @@
+<html>
+<body>
+Hello World.<br/>
+<a href="./CadastrarEmpresa.html" >Cadastrar Empresa</a>
+<form>
+		<input type="text" name="empresa">
+		<input type="submit" value="Submit">
+	
+	</form>
+</body>
+</html>

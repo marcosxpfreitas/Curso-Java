@@ -1,1 +1,1 @@
-[[{"location":"/opt/jdk1.8_java","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"],[{"location":"/home/java01/workspace/Curso-Java/java06/curso_jpa-master /passagens-aereas","type":"PROJECT","hints":{"PROJECT_NAME":"passagens-aereas"}},"io.github.diegofrsilva:passagens-aereas:0.0.1"]]
+[[{"location":"/home/java01/apache-tomcat-8.0.39/lib/servlet-api.jar","type":"JAR","hints":{}},"ABSENT"],[{"location":"/opt/jdk1.8_java","type":"JRE","hints":{}},"jre:jre:1.8.0"]]

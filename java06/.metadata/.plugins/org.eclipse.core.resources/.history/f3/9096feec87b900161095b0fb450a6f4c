@@ -1,0 +1,80 @@
+package br.com.javaweb.gerenciador.web;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.javaweb.gerenciador.Usuario;
+import br.com.javaweb.gerenciador.dao.UsuarioDAO;
+
+/**
+ * Servlet implementation class AdicionaUsuario
+ */
+@WebServlet("/AdicionaUsuario")
+public class AdicionaUsuario extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AdicionaUsuario() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String email = request.getParameter("nome");
+		String senha = request.getParameter("senha");
+		
+		
+		Usuario marcos = new UsuarioDAO().buscaPorEmailESenha(email, senha);
+		
+		if(marcos!=null){
+			StringBuffer html = new StringBuffer();
+			html.append("<html>\n");
+			html.append("<body>");
+			html.append("Usuario encontrado <br/>");
+			html.append("email:"+marcos.getEmail()+"\n");
+			html.append("senha:"+marcos.getSenha()+"\n");
+			html.append("</body>");
+			html.append("</html>\n");
+			Cookie cookie = new Cookie("usuario logado",email);
+			response.addCookie(cookie);
+			response.sendRedirect("/ExemploServletCookies/index.html");
+			
+			response.sendRedirect("index.html");
+		}else{
+			StringBuffer html = new StringBuffer();
+			html.append("<html>\n");
+			html.append("<body>");
+			html.append("Usuario não encontrado <br/>");
+			html.append("email:"+marcos.getEmail()+"\n");
+			html.append("senha:"+marcos.getSenha()+"\n");
+			html.append("</body>");
+			html.append("</html>\n");
+			response.sendRedirect("/ExemploServletCookies/index.html");
+		}
+		
+		
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
