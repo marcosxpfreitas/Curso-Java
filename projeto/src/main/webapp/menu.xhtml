@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:p="http://primefaces.org/ui">
+   <h:form>
+<p:menubar>
+  	<p:submenu label="Cadastros">
+          <p:menuitem value="Autor" url="/cadastroAutor.jsf" />
+    </p:submenu>
+    <p:submenu label="Listas">
+    	<p:menuitem value="Autores" url="/listarAutores.jsf"/>
+    </p:submenu>
+    
+ <p:menuitem value="Sair" action="#{loginMB.logout}"/>
+</p:menubar>
+</h:form>
+   
+</html>

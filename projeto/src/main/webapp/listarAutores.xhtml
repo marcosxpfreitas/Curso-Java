@@ -1,0 +1,18 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    template="/layout.xhtml">
+  
+  <ui:define name="conteudo">    
+      	<h:form id="formCadAutor" prependId="false">
+      		<p:dataTable var="autor" value="#{autorMB.autores}" >
+  			    <p:column headerText="Nomes">
+			      <h:outputText value="#{autor.nome}" />
+			  </p:column>
+    		</p:dataTable>
+      	</h:form>
+    </ui:define>
+    
+</ui:composition>

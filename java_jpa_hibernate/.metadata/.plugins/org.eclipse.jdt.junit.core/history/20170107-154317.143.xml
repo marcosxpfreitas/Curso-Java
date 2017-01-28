@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ClientTest" project="loja-aula1" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.dextra.loja.ClientTest" time="1.983">
+    <testcase name="testaQueAConexaoComOServidorFunciona" classname="br.com.dextra.loja.ClientTest" time="1.575"/>
+    <testcase name="testaCriacaoNovoCarrinho" classname="br.com.dextra.loja.ClientTest" time="0.192"/>
+    <testcase name="testaDeletaProdutoDoCarrinho" classname="br.com.dextra.loja.ClientTest" time="0.074"/>
+    <testcase name="TestaAlterarProdutodoCarrinho" classname="br.com.dextra.loja.ClientTest" time="0.142"/>
+  </testsuite>
+</testrun>

@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="com.dextraining.service.GenericService"/>
 <fullyQualifiedTypeName name="java.lang.annotation.Target"/>
 <fullyQualifiedTypeName name="com.dextraining.investimento.Investimento"/>
-<fullyQualifiedTypeName name="org.junit.After"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="com.dextraining.service.InvestimentoService"/>
 <fullyQualifiedTypeName name="com.dextraining.exception.ValidacaoException"/>
@@ -36,4 +35,22 @@
 <fullyQualifiedTypeName name="com.dextraining.filme.dominio.jpa.AtorService"/>
 <fullyQualifiedTypeName name="com.dextraining.filme.dominio.jpa.DiretorService"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="com.sun.net.httpserver.HttpServer"/>
+<fullyQualifiedTypeName name="org.junit.After"/>
+<fullyQualifiedTypeName name="org.glassfish.grizzly.http.server.HttpServer"/>
+<fullyQualifiedTypeName name="br.com.dextra.loja.modelo.Carrinho"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
+<fullyQualifiedTypeName name="javax.ws.rs.POST"/>
+<fullyQualifiedTypeName name="javax.ws.rs.client.Entity"/>
+<fullyQualifiedTypeName name="javax.xml.ws.Response"/>
+<fullyQualifiedTypeName name="java.net.URI"/>
+<fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
+<fullyQualifiedTypeName name="br.com.dextra.loja.modelo.Produto"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
 </qualifiedTypeNameHistroy>
